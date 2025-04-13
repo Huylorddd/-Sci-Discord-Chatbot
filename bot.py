@@ -7,11 +7,11 @@ import random
 ###################### FUNCTION PART ######################
 
 def get_game():
-  API_KEY = '// NEED TO PUT YOUR API KEY HERE //'
+  API_KEY = '// NEED TO PUT YOUR API KEY HERE //'  ## <<----------------- YOU NEED TO APPLY "RAWG_API_KEY" TO USE '$game' function !!  [1]
   # For more info, please check https://rawg.io/apidocs
   
   randompage = random.randint(1, 10000) # I think the number of games is more than this (btw i think this's good enough)
-  response = requests.get(f'https://api.rawg.io/api/games?page={randompage}&page_size=1&key={API_KEY}')  ## <<----------------- YOU NEED TO APPLY "RAWG_API_KEY" TO USE '$game' function !!  [1]
+  response = requests.get(f'https://api.rawg.io/api/games?page={randompage}&page_size=1&key={API_KEY}')  
   json_data = json.loads(response.text)
   return '---' + json_data['results'][0]['name'] + '---\n' + 'Release Date: ' + json_data['results'][0]['released'] + '\n' + 'Rating: ' + str(json_data['results'][0]['rating']) + '\n' + json_data['results'][0]['background_image']
 
