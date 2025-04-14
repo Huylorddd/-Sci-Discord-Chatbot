@@ -3,6 +3,8 @@ import requests
 import json
 import random
 
+# There're 2 prefix that need to be ADDED [1] and [2] I've marked inside the code.
+
 ###########################################################
 ###################### FUNCTION PART ######################
 
